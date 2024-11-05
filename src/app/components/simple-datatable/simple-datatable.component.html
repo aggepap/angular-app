@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped text-wrap">
+<thead>
+  <tr>
+    <th role="button" (click)="sortData('givenName')">Firstname {{sortSign('givenName')}}</th>
+    <th role="button" (click)="sortData('surname')">Lastname {{sortSign('surname')}}</th>
+    <th role="button" (click)="sortData('age')">Age {{sortSign('age')}}</th>
+    <th role="button" (click)="sortData('email')">Email {{sortSign('email')}}</th>
+    <th role="button" (click)="sortData('address')">Address {{sortSign('address')}}</th>
+  </tr>
+</thead>  
+<tbody>
+@for (person of manyPerson; track person) {
+  <tr class="align-middle" (dblclick)="onPersonClick(person)">
+    <td>{{person.givenName}}</td>
+    <td>{{person.surname}}</td>
+    <td>{{person.age}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.address}}</td>
+  </tr>
+}
+</tbody>
+</table>
